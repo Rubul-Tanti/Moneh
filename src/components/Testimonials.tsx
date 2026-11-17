@@ -1,6 +1,33 @@
 import { motion } from 'motion/react'
 import { fadeUpVariants, inViewOptions, staggerVariants } from './motion'
 
+const clients = [
+  {
+    role: 'Co-founder, Cogniflow Automation',
+    name: 'Rishabh Sharma',
+    review:
+      'Working with Moneh on my AI Calling Agent was a great experience. I was building a platform to automate inbound and outbound calls using human-like AI agents, and Moneh helped turn the idea into a working product. They understood the requirements quickly, handled the web development smoothly, and were responsive throughout the process. The final result was clean, modern, and aligned with what I had in mind. I’d definitely recommend Moneh to anyone looking for a team that can handle web development and turn an idea into a real product.',
+    image: '/images/clients/RishabSharma.jpeg',
+  },
+  {
+    role: 'Founder, ShiftSwip',
+    name: 'Manoj Prajapati',
+    review:
+      'We had an idea for a platform that could connect cafes and warehouses with workers looking for shifts, but turning the idea into an actual product was the challenging part. Moneh made that process much easier. They took care of the development, understood what we were trying to build, and were flexible when we wanted to make changes along the way. The marketplace turned out really well and is something we can actually build on going forward. Great team to work with.',
+    image: '/images/clients/Manojprajapati.jpeg',
+    isLogo: true,
+  },
+
+  {
+    role: 'CFO, Onlydevs',
+    name: 'Priyanka Singh',
+    image: '/images/clients/priyankasingh.jpeg',
+    isLogo: true,
+    review:
+      'I loved working with Moneh on my developer community platform. They understood the idea really well and brought it to life with a clean, engaging experience around hot takes, open source, and hackathons. Really happy with how it turned out!',
+  },
+]
+
 export function Testimonials() {
   return (
     <motion.section id="clients">
@@ -17,7 +44,7 @@ export function Testimonials() {
           </motion.div>
           <motion.a
             className="btn"
-            href="mailto:hello@rubultanti.in"
+            href="/contact#contact-options"
             whileHover={{ y: -3 }}
             whileTap={{ scale: 0.98 }}
           >
@@ -32,68 +59,27 @@ export function Testimonials() {
           whileInView="visible"
           viewport={inViewOptions}
         >
-          <motion.article
-            className="tm-card"
-            variants={fadeUpVariants}
-            whileHover={{ y: -6 }}
-          >
-            <div className="tm-who">
-              <span className="tm-av">C</span>
-              <div>
-                <b>Client name</b>
-                <br />
-                <span className="mute">Role, company</span>
+          {clients.map((client) => (
+            <motion.article
+              key={client.name}
+              className="tm-card"
+              variants={fadeUpVariants}
+              whileHover={{ y: -6 }}
+            >
+              <div className="tm-who">
+                <img
+                  className={`tm-av${client.isLogo ? ' tm-av-logo' : ''}`}
+                  src={client.image}
+                  alt={`${client.name}${client.isLogo ? "'s company logo" : ''}`}
+                />
+                <div className="tm-profile">
+                  <b>{client.name}</b>
+                  <span className="mute">{client.role}</span>
+                </div>
               </div>
-            </div>
-            <div className="tm-vid" role="img" aria-label="Video testimonial placeholder">
-              <span className="tm-play"></span>
-              <span className="tm-cap">Video testimonial</span>
-            </div>
-            <span className="tm-flag">Sample, replace with a real review</span>
-          </motion.article>
-
-          <motion.article
-            className="tm-card"
-            variants={fadeUpVariants}
-            whileHover={{ y: -6 }}
-          >
-            <div className="tm-who">
-              <span className="tm-av">C</span>
-              <div>
-                <b>Client name</b>
-                <br />
-                <span className="mute">Role, company</span>
-              </div>
-            </div>
-            <p className="tm-q">
-              Your client’s feedback goes here. Share what it was like to work with Moneh and what changed for their
-              business.
-            </p>
-            <span className="tm-mark" aria-hidden="true">
-              ”
-            </span>
-            <span className="tm-flag">Sample, replace with a real review</span>
-          </motion.article>
-
-          <motion.article
-            className="tm-card"
-            variants={fadeUpVariants}
-            whileHover={{ y: -6 }}
-          >
-            <div className="tm-who">
-              <span className="tm-av">C</span>
-              <div>
-                <b>Client name</b>
-                <br />
-                <span className="mute">Role, company</span>
-              </div>
-            </div>
-            <div className="tm-vid" role="img" aria-label="Video testimonial placeholder">
-              <span className="tm-play"></span>
-              <span className="tm-cap">Video testimonial</span>
-            </div>
-            <span className="tm-flag">Sample, replace with a real review</span>
-          </motion.article>
+              <p className="tm-q">{client.review}</p>
+            </motion.article>
+          ))}
         </motion.div>
       </div>
     </motion.section>

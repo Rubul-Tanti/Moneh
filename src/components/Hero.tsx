@@ -25,7 +25,7 @@ export function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.42 }}
       >
-        <motion.a className="btn" href="mailto:hello@rubultanti.in" whileHover={{ y: -3 }} whileTap={{ scale: 0.98 }}>
+        <motion.a className="btn" href="/contact#contact-options" whileHover={{ y: -3 }} whileTap={{ scale: 0.98 }}>
           Start a project
         </motion.a>
         <motion.a className="btn ghost" href="#e2e" whileHover={{ y: -3 }} whileTap={{ scale: 0.98 }}>

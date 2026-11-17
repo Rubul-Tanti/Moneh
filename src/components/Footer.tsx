@@ -15,7 +15,7 @@ export function Footer() {
           <motion.h2 variants={fadeUpVariants}>Have an idea? Let’s build something great.</motion.h2>
           <motion.a
             className="btn"
-            href="mailto:hello@rubultanti.in"
+            href="/contact#contact-options"
             whileHover={{ y: -3 }}
             whileTap={{ scale: 0.98 }}
           >
@@ -34,11 +34,11 @@ export function Footer() {
             <img src="/logo.png" alt="Moneh logo" className="h-8 w-auto" />
           </motion.a>
           <nav aria-label="Footer">
-            <a href="#e2e">Services</a>
-            <a href="#cases">Cases</a>
-            <a href="#clients">Clients</a>
-            <a href="#why">Why us</a>
-            <a href="mailto:hello@rubultanti.in">Contact</a>
+            <a href="/#e2e">Services</a>
+            <a href="/#cases">Cases</a>
+            <a href="/#clients">Clients</a>
+            <a href="/#why">Why us</a>
+            <a href="/contact">Contact</a>
           </nav>
           <span className="mute">© Moneh · rubultanti.in</span>
         </motion.div>

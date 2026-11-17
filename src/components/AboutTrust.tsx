@@ -1,5 +1,11 @@
 import { motion } from 'motion/react'
-import { fadeUpVariants, inViewOptions, staggerVariants } from './motion'
+import { fadeUpVariants, inViewOptions } from './motion'
+
+const clients = [
+  { name: 'ShiftSwip', logo: '/images/clients/shiftswip-logo.svg' },
+  { name: 'Onlydevs', logo: '/images/clients/onlydevs.jpg' },
+  { name: 'Cogniflow Automation', logo: '/images/clients/cogniflow-logo.webp' },
+]
 
 export function AboutTrust() {
   return (
@@ -34,7 +40,7 @@ export function AboutTrust() {
               We work with healthtech, edtech, and SaaS teams who’ve outgrown what they’ve built. Our process adapts to
               yours as we take your platforms, apps, and websites from research through launch and long-term support.
             </p>
-            <motion.a className="btn" href="mailto:hello@rubultanti.in" whileHover={{ y: -3 }}>
+            <motion.a className="btn" href="/contact#contact-options" whileHover={{ y: -3 }}>
               Talk to us
             </motion.a>
           </motion.div>
@@ -51,29 +57,15 @@ export function AboutTrust() {
             viewport={inViewOptions}
           >
             <p className="wy-lab">Trusted by</p>
-            <span className="tm-flag">Sample, replace with real client logos</span>
           </motion.div>
-          <motion.div
-            className="tr-row"
-            variants={staggerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={inViewOptions}
-          >
-            {Array.from({ length: 6 }, (_, index) => (
-              <motion.div
-                key={index}
-                className="tr-logo"
-                role="img"
-                aria-label="Client logo placeholder"
-                variants={fadeUpVariants}
-                whileHover={{ y: -4 }}
-              >
-                <i></i>
-                <span>Client logo</span>
-              </motion.div>
+          <div className="tr-row">
+            {clients.map((client) => (
+              <div key={client.name} className="mt-8  mx-auto flex flex-col items-center gap-2 justify-center   " role="img" aria-label={client.name}>
+                <img src={client.logo} alt={client.name} width="100" height="100"  className="rounded-4xl border border-gray-200" />
+                <span className="font-bold">{client.name}</span>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </motion.section>
     </>

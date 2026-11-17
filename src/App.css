@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700&family=DM+Sans:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
   --bg: #fff;
@@ -8,8 +8,8 @@
   --gold: #c9a24b;
   --gold-d: #8a6414;
   --soft: #fbf7ec;
-  --serif: 'Bodoni Moda', Georgia, serif;
-  --sans: 'DM Sans', system-ui, sans-serif;
+  --serif: 'Montserrat', system-ui, sans-serif;
+  --sans: 'Montserrat', system-ui, sans-serif;
   box-sizing: border-box;
   color-scheme: light;
   font-synthesis: none;
@@ -671,100 +671,65 @@ nav ul a:hover {
 }
 
 .tm-card {
-  background: var(--soft);
-  border-radius: 20px;
-  padding: 36px 22px 22px;
-  min-height: 540px;
+  background: #fff;
+  border: 1px solid #dfe3e8;
+  border-radius: 18px;
+  padding: 24px;
+  min-height: 0;
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  position: relative;
-  transition: transform 280ms ease, box-shadow 280ms ease;
+  gap: 18px;
+  transition: transform 280ms ease, box-shadow 280ms ease, border-color 280ms ease;
 }
 
 .tm-card:hover {
-  box-shadow: 0 18px 40px rgb(0 0 0 / 8%);
+  border-color: #c8cdd3;
+  box-shadow: 0 12px 30px rgb(0 0 0 / 7%);
 }
 
 .tm-who {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 0 4px;
-  line-height: 1.35;
+  gap: 12px;
+  min-width: 0;
+  line-height: 1.4;
 }
 
 .tm-av {
-  width: 68px;
-  height: 68px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background: var(--gold);
-  color: #000;
-  display: grid;
-  place-items: center;
-  font: 700 1.6rem var(--serif);
+  background: #f1f3f5;
+  object-fit: cover;
   flex: none;
 }
 
-.tm-vid {
-  flex: 1;
-  min-height: 300px;
-  border-radius: 16px;
-  background: #0d0d0d;
-  position: relative;
-  display: grid;
-  place-items: center;
+.tm-av-logo {
+  padding: 5px;
+  object-fit: contain;
 }
 
-.tm-play {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: #fff;
-  position: relative;
+.tm-profile {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  font-size: 0.9rem;
 }
 
-.tm-play::after {
-  content: '';
-  position: absolute;
-  left: 25px;
-  top: 20px;
-  border-left: 18px solid #000;
-  border-top: 12px solid transparent;
-  border-bottom: 12px solid transparent;
+.tm-profile b {
+  color: #14171a;
 }
 
-.tm-cap {
-  position: absolute;
-  bottom: 16px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  color: #bbb;
-  font-size: 0.85rem;
+.tm-profile .mute {
+  color: #68717b;
+  font-size: 0.82rem;
 }
 
 .tm-q {
-  margin: auto 0 0;
-  padding: 0 8px;
-  font: 500 clamp(1.4rem, 2vw, 1.8rem)/1.35 var(--serif);
-}
-
-.tm-mark {
-  font: 700 6rem/0.6 var(--serif);
-  color: var(--gold);
-  padding: 0 8px;
-  height: 40px;
-}
-
-.tm-flag {
-  align-self: flex-start;
-  font-size: 0.75rem;
-  font-weight: 700;
-  background: #000;
-  color: #fff;
-  padding: 3px 10px;
-  border-radius: 99px;
+  margin: 0;
+  padding: 0;
+  color: #20252b;
+  font: 400 0.98rem/1.65 var(--sans);
 }
 
 @media (max-width: 960px) {
@@ -772,13 +737,6 @@ nav ul a:hover {
     grid-template-columns: 1fr;
   }
 
-  .tm-card {
-    min-height: 0;
-  }
-
-  .tm-vid {
-    min-height: 240px;
-  }
 }
 
 .trust {
@@ -804,23 +762,34 @@ nav ul a:hover {
 }
 
 .tr-logo {
-  height: 84px;
-  border: 1px dashed #bbb;
+  min-height: 100px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.45);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 6px;
   color: var(--mute);
   font-size: 0.9rem;
   font-weight: 500;
+  border-radius: 12px;
+  padding: 0 12px;
 }
 
-.tr-logo i {
-  width: 22px;
-  height: 22px;
-  background: var(--gold);
-  transform: rotate(45deg);
-  flex: none;
+.tr-logo img {
+  display: block;
+  width: 100px;
+  height: 32px;
+  object-fit: contain;
+  opacity: 1;
+}
+
+.tr-logo-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #1c1c1c;
 }
 
 .ftr {
@@ -966,5 +935,104 @@ section {
 @media (max-width: 860px) {
   .cgrid {
     grid-template-columns: 1fr;
+  }
+}
+
+.contact-page {
+  min-height: calc(100vh - 68px);
+  padding: clamp(72px, 12vh, 132px) 0;
+  background:
+    radial-gradient(ellipse at 85% 12%, rgb(201 162 75 / 12%), transparent 34%),
+    #fbfaf7;
+}
+
+.contact-intro {
+  max-width: 760px;
+  margin-bottom: 56px;
+}
+
+.contact-intro .wy-lab {
+  margin-bottom: 20px;
+}
+
+.contact-intro h1 {
+  max-width: 13ch;
+  font-size: clamp(2.8rem, 7vw, 6rem);
+  letter-spacing: -0.055em;
+  line-height: 1.02;
+}
+
+.contact-lede {
+  margin-top: 24px;
+  max-width: 54ch;
+  color: var(--mute);
+  font-size: 1.1rem;
+}
+
+.contact-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.contact-option {
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(24px, 4vw, 40px);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: 0 16px 44px rgb(0 0 0 / 4%);
+}
+
+.contact-option-label {
+  color: var(--mute);
+  font-size: 0.9rem;
+}
+
+.contact-option h2 {
+  margin-top: 8px;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.contact-option p {
+  margin-top: 12px;
+  color: var(--mute);
+}
+
+.contact-status {
+  margin-top: auto;
+  padding-top: 28px;
+  color: var(--gold-d);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.contact-status[href] {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.contact-status[href]:hover {
+  color: #000;
+}
+
+@media (max-width: 700px) {
+  .contact-page {
+    padding: 64px 0 80px;
+  }
+
+  .contact-intro {
+    margin-bottom: 36px;
+  }
+
+  .contact-options {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-option {
+    min-height: 220px;
   }
 }

@@ -17,7 +17,7 @@ export function WhyUs() {
           </motion.div>
           <motion.a
             className="btn"
-            href="mailto:hello@rubultanti.in"
+            href="/contact#contact-options"
             variants={fadeUpVariants}
             initial="hidden"
             whileInView="visible"

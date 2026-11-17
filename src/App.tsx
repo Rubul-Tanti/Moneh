@@ -3,6 +3,7 @@ import LocomotiveScroll from 'locomotive-scroll'
 import { MotionConfig } from 'motion/react'
 import './App.css'
 import { AboutTrust } from './components/AboutTrust'
+import { ContactPage } from './components/ContactPage'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
@@ -10,6 +11,8 @@ import { ServicesSection } from './components/ServicesSection'
 import { Testimonials } from './components/Testimonials'
 import { WhyUs } from './components/WhyUs'
 import { setSmoothScrollInstance } from './smoothScroll'
+
+const isContactPage = window.location.pathname.replace(/\/+$/, '') === '/contact'
 
 function App() {
   useEffect(() => {
@@ -34,12 +37,18 @@ function App() {
       <Header />
 
       <main id="top">
-        <Hero />
-        <ServicesSection />
-        <AboutTrust />
-        {/* <CaseStudies /> */}
-        <Testimonials />
-        <WhyUs />
+        {isContactPage ? (
+          <ContactPage />
+        ) : (
+          <>
+            <Hero />
+            <ServicesSection />
+            <AboutTrust />
+            {/* <CaseStudies /> */}
+            <Testimonials />
+            <WhyUs />
+          </>
+        )}
       </main>
 
       <Footer />

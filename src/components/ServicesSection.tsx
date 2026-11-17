@@ -14,13 +14,13 @@ const stageContent = {
         title: 'Web design',
         description:
           'Modern, responsive websites designed around your brand, audience and goals.',
-        img: '/images/services/web-design.png',
+        img: '/images/services/web-design.webp',
       },
       {
         title: 'Web development',
         description:
           'Fast, scalable websites and full-stack applications built for real businesses.',
-        img: '/images/services/web-development.png',
+        img: '/images/services/ecom_website.png',
       },
     ],
   },
@@ -36,13 +36,13 @@ const stageContent = {
         title: 'Mobile development',
         description:
           'Cross-platform mobile apps for iOS and Android using modern technologies.',
-        img: '/images/services/mobile-development.png',
+        img: '/images/services/mobile.webp',
       },
       {
         title: 'AI integration',
         description:
           'AI-powered chatbots, automation, assistants and intelligent features integrated into your products.',
-        img: '/images/services/ai-integration.png',
+        img: '/images/services/ai.png',
       },
     ],
   },
@@ -58,13 +58,13 @@ const stageContent = {
         title: 'Logo & branding',
         description:
           'Distinctive logos and visual identities that make your business instantly recognisable.',
-        img: '/images/services/logo-design.png',
+        img: '/images/services/logo.png',
       },
       {
         title: 'Social media marketing',
         description:
           'Content, campaigns and social media strategy designed to build attention and bring in customers.',
-        img: '/images/services/social-media-marketing.png',
+        img: '/images/services/social.webp',
       },
     ],
   },
@@ -646,9 +646,6 @@ export function ServicesSection() {
 
                                     {/* Arrow */}
 
-                                    <span className="flex h-13 w-13 shrink-0 items-center justify-center rounded-full border border-white/30 text-xl text-white transition-all duration-500 group-hover:-rotate-45 group-hover:border-white group-hover:bg-white group-hover:text-black">
-                                      ↗
-                                    </span>
 
                                   </div>
 
