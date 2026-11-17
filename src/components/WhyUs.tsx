@@ -1,5 +1,8 @@
+import { Link } from 'react-router-dom'
 import { motion } from 'motion/react'
 import { fadeUpVariants, inViewOptions, staggerVariants } from './motion'
+
+const MotionLink = motion.create(Link)
 
 export function WhyUs() {
   return (
@@ -15,9 +18,9 @@ export function WhyUs() {
             <p className="wy-lab ">Why choose us?</p>
             <h2>Your growth is our priority</h2>
           </motion.div>
-          <motion.a
+          <MotionLink
             className="btn"
-            href="/contact#contact-options"
+            to="/contact#contact-options"
             variants={fadeUpVariants}
             initial="hidden"
             whileInView="visible"
@@ -25,7 +28,7 @@ export function WhyUs() {
             whileHover={{ y: -3 }}
           >
             Get in touch
-          </motion.a>
+          </MotionLink>
         </div>
 
         <motion.div

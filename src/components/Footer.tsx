@@ -1,5 +1,8 @@
+import { Link } from 'react-router-dom'
 import { motion } from 'motion/react'
 import { fadeUpVariants, inViewOptions } from './motion'
+
+const MotionLink = motion.create(Link)
 
 export function Footer() {
   return (
@@ -13,14 +16,14 @@ export function Footer() {
           viewport={inViewOptions}
         >
           <motion.h2 variants={fadeUpVariants}>Have an idea? Let’s build something great.</motion.h2>
-          <motion.a
+          <MotionLink
             className="btn"
-            href="/contact#contact-options"
+            to="/contact#contact-options"
             whileHover={{ y: -3 }}
             whileTap={{ scale: 0.98 }}
           >
             Get in touch
-          </motion.a>
+          </MotionLink>
         </motion.div>
 
         <motion.div
@@ -30,17 +33,16 @@ export function Footer() {
           viewport={inViewOptions}
           variants={fadeUpVariants}
         >
-          <motion.a className="logo" href="#top" aria-label="Moneh home" whileHover={{ scale: 1.04 }}>
+          <MotionLink className="logo" to="/#top" aria-label="Moneh home" whileHover={{ scale: 1.04 }}>
             <img src="/logo.png" alt="Moneh logo" className="h-8 w-auto" />
-          </motion.a>
+          </MotionLink>
           <nav aria-label="Footer">
-            <a href="/#e2e">Services</a>
-            <a href="/#cases">Cases</a>
-            <a href="/#clients">Clients</a>
-            <a href="/#why">Why us</a>
-            <a href="/contact">Contact</a>
+            <Link to="/#e2e">Services</Link>
+            <Link to="/case-studies">Case Studies</Link>
+            <Link to="/#why">Why us</Link>
+            <Link to="/contact">Contact</Link>
           </nav>
-          <span className="mute">© Moneh · rubultanti.in</span>
+          <span className="mute">© Moneh </span>
         </motion.div>
       </div>
     </motion.footer>

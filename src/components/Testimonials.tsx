@@ -1,5 +1,8 @@
+import { Link } from 'react-router-dom'
 import { motion } from 'motion/react'
 import { fadeUpVariants, inViewOptions, staggerVariants } from './motion'
+
+const MotionLink = motion.create(Link)
 
 const clients = [
   {
@@ -42,14 +45,14 @@ export function Testimonials() {
             <p className="wy-lab pt-14">What our clients say</p>
             <h2>Hear it from the people we build for</h2>
           </motion.div>
-          <motion.a
+          <MotionLink
             className="btn"
-            href="/contact#contact-options"
+            to="/contact#contact-options"
             whileHover={{ y: -3 }}
             whileTap={{ scale: 0.98 }}
           >
             Get in touch
-          </motion.a>
+          </MotionLink>
         </div>
 
         <motion.div
