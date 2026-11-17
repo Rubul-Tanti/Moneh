@@ -1,28 +1,28 @@
 import { AboutTrust } from "./AboutTrust"
 
-const caseStudies = [
-  {
-    tag: '#E-commerce website',
-    title: 'An online store for a local retailer',
-    labels: ['Sample project', 'Retail'],
-    items: ['A product catalogue, cart and payment gateway', 'Orders from customers beyond the neighbourhood', 'Products and orders managed from an admin panel'],
-    ariaLabel: 'Online store mockup',
-  },
-  {
-    tag: '#Mobile app',
-    title: 'A food ordering app for a restaurant group',
-    labels: ['Sample project', 'Food and hospitality'],
-    items: ['Android and iOS apps with menus and payments', 'Order tracking for customers', 'Orders and delivery managed in one admin panel'],
-    ariaLabel: 'Food ordering app mockup',
-  },
-  {
-    tag: '#Software',
-    title: 'School management for a growing school',
-    labels: ['Sample project', 'Education'],
-    items: ['Attendance, fees and results in one place', 'Parent updates and communication', 'Records moved off paper'],
-    ariaLabel: 'Management software dashboard mockup',
-  },
-] as const
+// const caseStudies = [
+//   {
+//     tag: '#E-commerce website',
+//     title: 'An online store for a local retailer',
+//     labels: ['Sample project', 'Retail'],
+//     items: ['A product catalogue, cart and payment gateway', 'Orders from customers beyond the neighbourhood', 'Products and orders managed from an admin panel'],
+//     ariaLabel: 'Online store mockup',
+//   },
+//   {
+//     tag: '#Mobile app',
+//     title: 'A food ordering app for a restaurant group',
+//     labels: ['Sample project', 'Food and hospitality'],
+//     items: ['Android and iOS apps with menus and payments', 'Order tracking for customers', 'Orders and delivery managed in one admin panel'],
+//     ariaLabel: 'Food ordering app mockup',
+//   },
+//   {
+//     tag: '#Software',
+//     title: 'School management for a growing school',
+//     labels: ['Sample project', 'Education'],
+//     items: ['Attendance, fees and results in one place', 'Parent updates and communication', 'Records moved off paper'],
+//     ariaLabel: 'Management software dashboard mockup',
+//   },
+// ] as const
 
 export function CaseStudies() {
   return (
