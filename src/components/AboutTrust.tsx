@@ -5,9 +5,9 @@ import { fadeUpVariants, inViewOptions } from './motion'
 const MotionLink = motion.create(Link)
 
 const clients = [
-  { name: 'ShiftSwip', logo: '/images/clients/shiftswip-logo.svg' },
-  { name: 'Onlydevs', logo: '/images/clients/onlydevs.jpg' },
-  { name: 'Cogniflow Automation', logo: '/images/clients/cogniflow-logo.jpg' },
+  { name: 'ShiftSwip', logo: '/images/clients/shiftswip-logo.svg', width: 520, height: 520 },
+  { name: 'Onlydevs', logo: '/images/clients/onlydevs.jpg', width: 2000, height: 2000 },
+  { name: 'Cogniflow Automation', logo: '/images/clients/cogniflow-logo.jpg', width: 36, height: 34 },
 ]
 
 export function AboutTrust() {
@@ -64,7 +64,7 @@ export function AboutTrust() {
           <div className="flex gap-4 flex-wrap ">
             {clients.map((client) => (
               <div key={client.name} className="mt-8  mx-auto  flex  items-center gap-2 justify-center   " role="img" aria-label={client.name}>
-                <img src={client.logo} alt={client.name}   className=" h-auto w-[30px] md:w-[50px] rounded-lg md:rounded-xl   border border-gray-200" />
+                <img src={client.logo} alt={client.name} width={client.width} height={client.height} className=" h-auto w-[30px] md:w-[50px] rounded-lg md:rounded-xl   border border-gray-200" />
                 <span className="font-bold text-lg md:text-2xl">{client.name}</span>
               </div>
             ))}

@@ -18,7 +18,16 @@ export type CaseStudySection =
   | ({ type: 'outcomes'; items: string[] } & Heading)
   | ({ type: 'process'; steps: { title: string; description: string }[] } & Heading)
   | ({ type: 'gallery'; previews: { type: PreviewType; title: string }[] } & Heading)
-  | ({ type: 'image-gallery'; images: { src: string; alt: string; title: string }[] } & Heading)
+  | ({
+      type: 'image-gallery'
+      images: {
+        src: string
+        alt: string
+        title: string
+        width: number
+        height: number
+      }[]
+    } & Heading)
   | ({
       type: 'pipeline'
       steps: string[]
@@ -44,7 +53,9 @@ export type CaseStudy = {
   tech: string[]
 
   logo: string
+  logoDimensions: { width: number; height: number }
   hero?: string
+  heroDimensions: { width: number; height: number }
   live?: string
 
   overview: {
@@ -85,7 +96,9 @@ export const caseStudies: CaseStudy[] = [
     ],
 
     logo: '/images/clients/cogniflow-logo.webp',
+    logoDimensions: { width: 64, height: 43 },
     hero: '/images/clients/cogniflow.png',
+    heroDimensions: { width: 1140, height: 710 },
     live: 'https://cogniflowautomations.com/',
 
     overview: {
@@ -232,7 +245,9 @@ export const caseStudies: CaseStudy[] = [
     ],
 
     hero: '/images/clients/shiftswip.png',
+    heroDimensions: { width: 1134, height: 708 },
     logo: '/images/clients/shiftswip-logo.svg',
+    logoDimensions: { width: 520, height: 520 },
     live: 'https://shiftswip.com/',
 
     overview: {
@@ -264,11 +279,15 @@ export const caseStudies: CaseStudy[] = [
             src: '/images/clients/shiftswip-dashboard.jpeg',
             alt: 'ShiftSwip business dashboard showing shift coverage and active shifts',
             title: 'Business dashboard',
+            width: 770,
+            height: 1600,
           },
           {
             src: '/images/clients/shiftswip-recent-application.jpeg',
             alt: 'ShiftSwip recent applications and recommended workers',
             title: 'Recent applications',
+            width: 774,
+            height: 1600,
           },
         ],
       },

@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/case-studies",
+      "destination": "/case-studies/index.html"
+    },
+    {
+      "source": "/case-studies/:slug",
+      "destination": "/case-studies/:slug/index.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact/index.html"
+    }
+  ]
+}

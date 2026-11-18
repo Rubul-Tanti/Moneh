@@ -15,12 +15,16 @@ const stageContent = {
         description:
           'Modern, responsive websites designed around your brand, audience and goals.',
         img: '/images/services/web-design.webp',
+        width: 1024,
+        height: 768,
       },
       {
         title: 'Web development',
         description:
           'Fast, scalable websites and full-stack applications built for real businesses.',
         img: '/images/services/ecom_website.png',
+        width: 1274,
+        height: 794,
       },
     ],
   },
@@ -37,12 +41,16 @@ const stageContent = {
         description:
           'Cross-platform mobile apps for iOS and Android using modern technologies.',
         img: '/images/services/mobile.webp',
+        width: 1024,
+        height: 768,
       },
       {
         title: 'AI integration',
         description:
           'AI-powered chatbots, automation, assistants and intelligent features integrated into your products.',
         img: '/images/services/ai.png',
+        width: 1536,
+        height: 1024,
       },
     ],
   },
@@ -59,12 +67,16 @@ const stageContent = {
         description:
           'Distinctive logos and visual identities that make your business instantly recognisable.',
         img: '/images/services/logo.png',
+        width: 1536,
+        height: 1024,
       },
       {
         title: 'Social media marketing',
         description:
           'Content, campaigns and social media strategy designed to build attention and bring in customers.',
         img: '/images/services/social.webp',
+        width: 1024,
+        height: 768,
       },
     ],
   },
@@ -570,6 +582,8 @@ export function ServicesSection() {
                                 alt={
                                   service.title
                                 }
+                                width={service.width}
+                                height={service.height}
                                 className="absolute inset-0 h-full w-full object-cover"
                                 whileHover={{
                                   scale: 1.055,

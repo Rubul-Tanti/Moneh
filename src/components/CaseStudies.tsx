@@ -187,6 +187,16 @@ export function CaseStudies() {
                   <img
                     src={study.hero ?? study.logo}
                     alt={study.hero ? `${study.name} project preview` : `${study.name} logo`}
+                    width={
+                      study.hero
+                        ? study.heroDimensions.width
+                        : study.logoDimensions.width
+                    }
+                    height={
+                      study.hero
+                        ? study.heroDimensions.height
+                        : study.logoDimensions.height
+                    }
                   />
                   <span className="case-study-number">
                     0{index + 1}
@@ -333,10 +343,22 @@ export function ProjectCaseStudy() {
             transition={{ duration: 0.7, delay: 0.2 }}
           >
             {study.hero ? (
-              <img src={study.hero} alt={`${study.name} project preview`} className="w-full" />
+              <img
+                src={study.hero}
+                alt={`${study.name} project preview`}
+                width={study.heroDimensions.width}
+                height={study.heroDimensions.height}
+                className="w-full"
+              />
             ) : (
               <div className="grid place-items-center p-16">
-                <img src={study.logo} alt={`${study.name} logo`} className="max-h-28 w-auto" />
+                <img
+                  src={study.logo}
+                  alt={`${study.name} logo`}
+                  width={study.logoDimensions.width}
+                  height={study.logoDimensions.height}
+                  className="max-h-28 w-auto"
+                />
               </div>
             )}
           </motion.div>
@@ -508,6 +530,8 @@ function ProjectSection({ section }: { section: CaseStudySection }) {
                   <img
                     src={image.src}
                     alt={image.alt}
+                    width={image.width}
+                    height={image.height}
                     className="mx-auto h-auto max-h-[75vh] w-auto max-w-full object-contain"
                     loading="lazy"
                   />

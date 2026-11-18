@@ -91,6 +91,8 @@ export function Header() {
             <img
               src="/logo.png"
               alt="Moneh logo"
+              width={2172}
+              height={724}
               className="h-7 w-auto sm:h-8"
             />
           </MotionLink>

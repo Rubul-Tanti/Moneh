@@ -43,6 +43,8 @@ export function ContactPage() {
           <img
             src="/logo.png"
             alt="Moneh"
+            width={2172}
+            height={724}
             className="h-10 w-auto"
           />
         </motion.div>

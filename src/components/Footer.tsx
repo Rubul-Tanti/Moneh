@@ -34,7 +34,13 @@ export function Footer() {
           variants={fadeUpVariants}
         >
           <MotionLink className="logo" to="/#top" aria-label="Moneh home" whileHover={{ scale: 1.04 }}>
-            <img src="/logo.png" alt="Moneh logo" className="h-8 w-auto" />
+            <img
+              src="/logo.png"
+              alt="Moneh logo"
+              width={2172}
+              height={724}
+              className="h-8 w-auto"
+            />
           </MotionLink>
           <nav aria-label="Footer">
             <Link to="/#e2e">Services</Link>

@@ -3,6 +3,7 @@ import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import LocomotiveScroll from 'locomotive-scroll'
 import { MotionConfig } from 'motion/react'
 import './App.css'
+import { getSeoMetadata, renderSeoHead } from './seo'
 import { AboutTrust } from './components/AboutTrust'
 import { ContactPage } from './components/ContactPage'
 import { CaseStudies, ProjectCaseStudy } from './components/CaseStudies'
@@ -16,6 +17,7 @@ import { scrollToElement, setSmoothScrollInstance } from './smoothScroll'
 
 function App() {
   const { hash, pathname } = useLocation()
+  const metadata = getSeoMetadata(pathname)
 
   useEffect(() => {
     const scroll = new LocomotiveScroll({
@@ -40,6 +42,19 @@ function App() {
     const target = document.getElementById(decodeURIComponent(hash.slice(1)))
     if (target) scrollToElement(target)
   }, [hash, pathname])
+
+  useEffect(() => {
+    document.head
+      .querySelectorAll('[data-route-seo]')
+      .forEach((element) => element.remove())
+
+    const routeHead = document.createElement('template')
+    routeHead.innerHTML = renderSeoHead(metadata)
+    for (const element of Array.from(routeHead.content.children)) {
+      element.setAttribute('data-route-seo', '')
+      document.head.append(element)
+    }
+  }, [metadata])
 
   return (
     <MotionConfig reducedMotion="user">
